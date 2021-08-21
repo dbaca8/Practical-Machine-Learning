@@ -322,6 +322,6 @@ The goal of this project was to build and compare machine learning models to pre
 
 There is an inherent bias-variance trade-off in the modeling process and k-fold Cross Validation parameters are an effective way to reduce both bias and variance in building and testing the models. k-fold Cross Validation methods were performed to calculate each model's Accuracy and Out-of-Sample-Error on the first-seen testing data, then collected and assembled for comparison.
 
-My choice of machine learning model was Random Forest based on the highest Accuracy (99.56%) and lowest Out-of-Sample-Error achieved on the held-out and unknown testing data of the three models tested. In view of the exceptional high Accuracy of the Random Forest model, further training improvements, such as combined ensembling models, have been deemed unnecessary in this instance. The predictions based on the Random Forest model on 20 cases of test_csv data were 100% accurate.
+My choice of machine learning model was Random Forest based on the highest Accuracy (99.56%) and lowest Out-of-Sample-Error achieved on the held-out and unknown testing data of the three models tested. In view of the exceptional high Accuracy of the Random Forest model, further training improvements, such as combined ensembling models, have been deemed unnecessary in this instance. 
 
 ---
