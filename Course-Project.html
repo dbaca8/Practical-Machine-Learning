@@ -412,12 +412,12 @@ cart_confmatrix</code></pre>
 ## Balanced Accuracy      0.9645   0.8849   0.9157   0.9146   0.9167</code></pre>
 <hr />
 </div>
-<div id="cart-accuracy-and-out-of-sample-error-on-testing-data" class="section level4">
-<h4>CART Accuracy and Out-of-Sample-Error on <strong>testing</strong> data</h4>
+<div id="cart-accuracy-and-out-of-sample-error-1---accuracy-on-testing-data" class="section level4">
+<h4>CART Accuracy and Out-of-Sample-Error (1 - Accuracy) on <strong>testing</strong> data</h4>
 <pre class="r"><code>cart_Accu &lt;- cart_confmatrix$overall[[1]]  
 cart_Accu</code></pre>
 <pre><code>## [1] 0.8774851</code></pre>
-<pre class="r"><code>cart_OOSE &lt;- 1 - cart_confmatrix$overall[[1]]
+<pre class="r"><code>cart_OOSE &lt;- 1 - cart_Accu
 cart_OOSE</code></pre>
 <pre><code>## [1] 0.1225149</code></pre>
 <hr />
@@ -512,13 +512,12 @@ gbm_confmatrix</code></pre>
 ## Balanced Accuracy      0.9869   0.9629   0.9707   0.9792   0.9808</code></pre>
 <hr />
 </div>
-<div id="gbm-accuracy-and-out-of-sample-error-on-testing-data" class="section level4">
-<h4>GBM Accuracy and Out-of-Sample-Error on <strong>testing</strong> data</h4>
-<pre class="r"><code>gbm_Accu &lt;- gbm_confmatrix$overall[1] 
+<div id="gbm-accuracy-and-out-of-sample-error-1---accuracy-on-testing-data" class="section level4">
+<h4>GBM Accuracy and Out-of-Sample-Error (1 - Accuracy) on <strong>testing</strong> data</h4>
+<pre class="r"><code>gbm_Accu &lt;- gbm_confmatrix$overall[[1]]
 gbm_Accu</code></pre>
-<pre><code>##  Accuracy 
-## 0.9632965</code></pre>
-<pre class="r"><code>gbm_OOSE &lt;- 1 - gbm_confmatrix$overall[[1]]  
+<pre><code>## [1] 0.9632965</code></pre>
+<pre class="r"><code>gbm_OOSE &lt;- 1 - gbm_Accu 
 gbm_OOSE</code></pre>
 <pre><code>## [1] 0.03670348</code></pre>
 <hr />
@@ -683,13 +682,12 @@ rf_confmatrix</code></pre>
 ## Balanced Accuracy      0.9993   0.9962   0.9960   0.9947   0.9985</code></pre>
 <hr />
 </div>
-<div id="random-forest-accuracy-and-out-of-sample-error-on-testing-data" class="section level4">
-<h4>Random Forest Accuracy and Out-of-Sample-Error on <strong>testing</strong> data</h4>
-<pre class="r"><code>rf_Accu &lt;- rf_confmatrix$overall[1] 
+<div id="random-forest-accuracy-and-out-of-sample-error-1---accuracy-on-testing-data" class="section level4">
+<h4>Random Forest Accuracy and Out-of-Sample-Error (1 - Accuracy) on <strong>testing</strong> data</h4>
+<pre class="r"><code>rf_Accu &lt;- rf_confmatrix$overall[[1]] 
 rf_Accu</code></pre>
-<pre><code>## Accuracy 
-## 0.995582</code></pre>
-<pre class="r"><code>rf_OOSE &lt;- 1 - rf_confmatrix$overall[[1]]
+<pre><code>## [1] 0.995582</code></pre>
+<pre class="r"><code>rf_OOSE &lt;- 1 - rf_Accu
 rf_OOSE</code></pre>
 <pre><code>## [1] 0.004418012</code></pre>
 <hr />
@@ -721,7 +719,7 @@ Model_Accuracies</code></pre>
 ## 1  CART 0.8774851 0.122514868
 ## 2   GBM 0.9632965 0.036703483
 ## 3    RF 0.9955820 0.004418012</code></pre>
-<p>Comparing the 3 models tested, the CART model has the lowest accuracy (87.7%), the Random Forest model has the highest accuracy (99.56%), and thus lowest Out-of-Sample-Error (OOSE)(0.441%).</p>
+<p>Comparing the 3 models tested, the CART model has the lowest accuracy (87.7%), the Random Forest model has the highest accuracy (99.56%), and thus (1 - Accuracy) lowest Out-of-Sample-Error (OOSE)(0.441%).</p>
 <hr />
 </div>
 </div>
