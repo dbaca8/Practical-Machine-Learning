@@ -148,13 +148,13 @@ cart_confmatrix
 
 --- 
 
-#### CART Accuracy and Out-of-Sample-Error on **testing** data
+#### CART Accuracy and Out-of-Sample-Error (1 - Accuracy) on **testing** data
 
 cart_Accu <- cart_confmatrix$overall[[1]]
 
 cart_Accu
 
-cart_OOSE <- 1 - cart_confmatrix$overall[[1]]
+cart_OOSE <- 1 - cart_Accu
 
 cart_OOSE
 
@@ -199,13 +199,13 @@ gbm_confmatrix
 
 --- 
 
-#### GBM Accuracy and Out-of-Sample-Error on **testing** data
+#### GBM Accuracy and Out-of-Sample-Error (1 - Accuracy) on **testing** data
 
-gbm_Accu <- gbm_confmatrix$overall[1] 
+gbm_Accu <- gbm_confmatrix$overall[[1]]
 
 gbm_Accu
 
-gbm_OOSE <- 1 - gbm_confmatrix$overall[[1]] 
+gbm_OOSE <- 1 - gbm_Accu
 
 gbm_OOSE
 
@@ -262,13 +262,13 @@ rf_confmatrix
 
 ---
 
-#### Random Forest Accuracy and Out-of-Sample-Error on **testing** data
+#### Random Forest Accuracy and Out-of-Sample-Error (1 - Accuracy) on **testing** data
 
-rf_Accu <- rf_confmatrix$overall[1]
+rf_Accu <- rf_confmatrix$overall[[1]]
 
 rf_Accu
 
-rf_OOSE <- 1 - rf_confmatrix$overall[[1]]
+rf_OOSE <- 1 - rf_Accu
 
 rf_OOSE
 
@@ -306,7 +306,7 @@ Model_Accuracies <- data.frame(Model = c('CART', 'GBM', 'RF'),
                                
 Model_Accuracies
 
-Comparing the 3 models tested, the CART model has the lowest accuracy (87.7%), the Random Forest model has the highest accuracy (99.56%), and thus lowest Out-of-Sample-Error (OOSE)(0.441%).
+Comparing the 3 models tested, the CART model has the lowest accuracy (87.7%), the Random Forest model has the highest accuracy (99.56%), and thus (1 - Accuracy) lowest Out-of-Sample-Error (OOSE)(0.441%).
 
 ---
 
